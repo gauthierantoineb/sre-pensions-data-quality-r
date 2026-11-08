@@ -1,0 +1,33 @@
+# Parametres de cadrage verifies le 2026-11-06 ; acces effectif a l'export NON teste.
+dataset_id: "cube-flux-civil-droit-direct-1"
+landing_page: "https://data.economie.gouv.fr/explore/dataset/cube-flux-civil-droit-direct-1/"
+secondary_catalog: "https://www.data.gouv.fr/datasets/retraite-cube-flux-civil-droit-direct-1"
+# Point d'entree conforme a la documentation officielle de l'API Explore v2.1.
+# A tester en pratique depuis le poste d'execution.
+export_csv_url: "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/cube-flux-civil-droit-direct-1/exports/csv?use_labels=false&delimiter=%3B"
+metadata_api_url: "https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/cube-flux-civil-droit-direct-1"
+csv_delimiter: ";"
+# Le format numerique de l'export brut n'a pas ete verifie : commencer par inspecter le CSV.
+# Adapter la configuration explicitement si les decimaux sont exprimes avec une virgule.
+decimal_mark: "."
+expected_columns:
+  - "annee"
+  - "categorie_civile"
+  - "motif_depart"
+  - "sexe"
+  - "effectif"
+  - "age"
+  - "montant_pension"
+  - "duree_services_retenus"
+  - "duree_bonifications_retenues"
+  - "duree_totassur"
+  - "effectif_totassur"
+key_columns:
+  - "annee"
+  - "categorie_civile"
+  - "motif_depart"
+  - "sexe"
+# Ce sont des codes OBSERVES sur la page ; verification exhaustive apres export.
+observed_motif_codes: ["VAS", "VCL", "VAA", "VFF", "INV"]
+observed_sex_codes: ["F", "M"]
+observed_categories: ["A", "B", "C"]
